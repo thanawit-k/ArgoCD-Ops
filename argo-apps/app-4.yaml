@@ -1,0 +1,17 @@
+# k8s Application CRD
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-app-4
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: argo-app-4
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: my-apps/app-4
+    repoURL: https://github.com/thanawit-k/ArgoCD-Ops.git
+    targetRevision: HEAD
