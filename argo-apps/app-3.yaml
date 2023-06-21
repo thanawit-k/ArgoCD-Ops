@@ -15,3 +15,9 @@ spec:
     path: my-apps/app-3
     repoURL: https://github.com/thanawit-k/ArgoCD-Ops.git
     targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

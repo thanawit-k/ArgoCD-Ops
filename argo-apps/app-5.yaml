@@ -13,5 +13,11 @@ spec:
   project: default
   source:
     path: my-apps/app-5
-    repoURL: https://github.com/iamsamitdev/argocd-app-of-apps.git
+    repoURL: https://github.com/thanawit-k/ArgoCD-Ops.git
     targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
